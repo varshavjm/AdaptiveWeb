@@ -18,6 +18,9 @@
 <body>
 	<%
 		String username = GlobalConstants.userName;
+	if(username.length()<=0)
+		response.sendRedirect("login.jsp");
+
 	%>
 	<h1>
 		Welcome,

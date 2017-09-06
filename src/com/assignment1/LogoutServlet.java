@@ -40,8 +40,6 @@ public class LogoutServlet extends HttpServlet {
       	GlobalConstants.state=States.LOGGEDOUT;
       	GlobalConstants.userName="";
       	Actions.destroyInstance();
-        out.print("You are successfully logged out!");  
-          
         out.close();  
 	}
 

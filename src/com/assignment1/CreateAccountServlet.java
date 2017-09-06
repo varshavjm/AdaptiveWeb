@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -49,16 +50,42 @@ public class CreateAccountServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// Add login and password to an existing login.txt file
 		createDirectory();
-		addLoginEntry(request.getParameter("username"), request.getParameter("password"));
-		System.out.println("Entry successfully put in file.\nLogin name is" + request.getParameter("username"));
-		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+		if(userExists(request.getParameter("username"))) {
+			
+			out.println("<h2> User already exists!!!</h2>");
+			request.getRequestDispatcher("create.html").include(request, response);
+			return;
+		}
+		
+		addLoginEntry(request.getParameter("username"), request.getParameter("password"));
+		
+		
+		System.out.println("Entry successfully put in file.\nLogin name is" + request.getParameter("username"));
+		
+	
 		out.println("You have successfully created your account");
+		GlobalConstants.state=States.LOGGEDOUT;
 		request.getRequestDispatcher("login.jsp").include(request, response);
 	}
 
+	private boolean userExists(String username) {
+		//read the login file and check if username exists. if yes, return true
+		ArrayList<String> userList = FileUtility.readFromFile(GlobalConstants.directoryPrefix+"Login.txt");
+		if(userList.size()==0)
+			return true;
+		for(String str:userList) {
+			String [] splitter= str.split(",");
+			String user=splitter[0];
+			if(user.equals(username))
+				return true;
+		}
+		return false;
+	}
+
 	public void createDirectory() {
-		String directoryName = "./Database/";
+		String directoryName = GlobalConstants.directoryPrefix;
 		File directory = new File(directoryName);
 		if (!directory.exists()) {
 			directory.mkdir();

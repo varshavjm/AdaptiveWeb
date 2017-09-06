@@ -33,3 +33,56 @@ table tr td{
 	border: 1px solid #505050;
 	font-size:18px;
 }
+
+
+body#loginPage #form{
+	
+	margin:100px auto !important;
+	padding:10px;
+	border: 1px solid #b2c2ec;
+	width:600px;
+	background-color:#efeff7;
+	height:400px;
+	
+}
+
+label
+{
+    font-weight: 400 !important;
+    font-size: 34px;
+    font-family: Lato;
+    color:#d500f9;
+    width:100%;
+}
+
+body#loginPage #submit, button
+{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #e6e2e2;
+}
+
+.buttons{
+	 
+    width: 500px;
+    height:initial;
+    margin-top:80px;
+    margin-left:100px;
+}
+button{
+	
+	 margin-left:30px !important;
+}
+input{
+	width:250px;
+	height:30px;
+	font-size:24px;
+	}
+
+input[type='submit']{
+	 width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #e6e2e2;
+}

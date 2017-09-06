@@ -60,7 +60,7 @@ public class MonitorServlet extends HttpServlet {
 		case "Scroll":
 			Actions.addAction("You are viewing the post");
 			action="You are viewing the post";
-			break;
+			return;
 		case "Favourite":
 			Actions.addAction("You favourited a question");
 			action="You favourited a question";
