@@ -71,7 +71,7 @@ public class LoginServlet extends HttpServlet implements Filter {
 		String password = request.getParameter("password");
 
 		if (validUser(name, password)) {
-			out.println("Yaay logged in");
+			//out.println("Yaay logged in");
 			GlobalConstants.state = States.LOGGEDIN;
 			GlobalConstants.userName = name;
 			

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+body{
+	
+	padding:10px;
+}
+table{
+	border: 1px solid #505050;
+	font-family: Lato;
+	font-weight:400;
+}
+
+a{
+	       color: #b133b7;
+    text-decoration: none;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: 500;
+}
+
+h1{
+	color:#00bfff !important;
+	 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+	}
+table th{
+	font-size:24px;
+	padding:20px;
+	text-align: center;
+	border: 1px solid #505050;
+}
+
+table tr td{
+	padding:10px;
+	border: 1px solid #505050;
+	font-size:18px;
+}
