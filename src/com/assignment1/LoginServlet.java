@@ -70,8 +70,12 @@ public class LoginServlet extends HttpServlet implements Filter {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 
+		//Create the default logins for aaa,bbb,ccc
+		CreateAccountServlet.createDirectory();
+		
+		
 		if (validUser(name, password)) {
-			//out.println("Yaay logged in");
+		
 			GlobalConstants.state = States.LOGGEDIN;
 			GlobalConstants.userName = name;
 			

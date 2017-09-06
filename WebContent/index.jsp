@@ -51,7 +51,7 @@
 		%>
 	</table>
 	
-	<h1>Below is the list of actions logged and their significance</h1>
+	<h1>Actions and why they are logged</h1>
 	<table id="Actions">
 	<th>Actions</th>
 	<th>Significance</th>

@@ -84,7 +84,7 @@ public class CreateAccountServlet extends HttpServlet {
 		return false;
 	}
 
-	public void createDirectory() {
+	public static void createDirectory() {
 		String directoryName = GlobalConstants.directoryPrefix;
 		File directory = new File(directoryName);
 		if (!directory.exists()) {
@@ -139,7 +139,7 @@ public class CreateAccountServlet extends HttpServlet {
 			System.out.println("Directory already exists");
 	}
 
-	public void addLoginEntry(String username, String password) {
+	private void addLoginEntry(String username, String password) {
 		String s = String.join(",", username, password);
 		FileUtility.createOrAppendContent(GlobalConstants.directoryPrefix+"Login.txt", s);
 
